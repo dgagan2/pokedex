@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "7b97d7be-a39a-4a92-970f-9dec5d61700e",
+		"name": "pokedex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26408673"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:9000/albums/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 11,\n    \"id\": 101,\n    \"title\": \"Se creo por potsman\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9000/albums/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"albums",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9000/albums/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"userId\": 12,\n    \"id\": 102,\n    \"title\": \"Se creo por potsman\"\n},\n{\n    \"userId\": 13,\n    \"id\": 103,\n    \"title\": \"Se creo por potsman\"\n}]"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9000/albums/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"albums",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_by_user_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:9000/albums/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"albums",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:9000/albums/id/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"albums",
+						"id",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
