@@ -38,9 +38,11 @@ const createAlbums=(req,res)=>{
 }
 const deleteAlbums=(req,res)=>{
   try {
-    
+    const Id=req.params.userId;
+    albumsService.deleteByUserId(Id);
+    res.status(200).json({message:'Usuario eliminado'});
   } catch (error) {
-    
+    res.status(404).json({message:'No se puede eliminar el usuario'});
   }
 }
 const editCompleteAlbums=(req,res)=>{

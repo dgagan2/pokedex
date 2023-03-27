@@ -26,6 +26,15 @@ class AlbumsServices{
             resolve(foundId);
         },1000)
     }
+    deleteByUserId(UserId) {
+        const foundUserId = Object.values(bd.albums).filter(user => user.userId == UserId);
+        if (foundUserId.length==0) {
+            res.status(404)
+        } else {
+            const newAlbum = Object.values(this.Albums).filter(user => user.userId != UserId)
+            this.Albums = newAlbum
+        }        
+    }
 
 }
 module.exports=AlbumsServices;
