@@ -39,8 +39,17 @@ class AlbumsServices{
             this.Albums = newAlbum;
         }        
     }
-    editPartialByUserID() {
-       
+    editPartialByUserID(Id, newData) {
+        console.log("test 2")
+        const foundId = Object.values(bd.albums).filter(user => user.id == Id);
+        if (foundId.length == 0) {
+            res.status(404);
+            console.log("No paso")
+        } else {
+            console.log("test 3")
+            const newArray = bd.albums.map(user => user.id === parseInt(Id) ? {...user,...newData}:user)
+            console.log(newArray)
+        }
     }
     editAllByUserId(Id,newAlbum){
         const foundId = Object.values(bd.albums).filter(user => user.id == Id);

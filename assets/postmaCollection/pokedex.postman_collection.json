@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "7b97d7be-a39a-4a92-970f-9dec5d61700e",
+		"_postman_id": "6071bd24-2024-45a2-bc22-d7f605e7c7a1",
 		"name": "pokedex",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26408673"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -101,7 +100,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:9000/albums/id/3",
+					"raw": "http://127.0.0.1:9000/albums/id/120",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -113,46 +112,12 @@
 					"path": [
 						"albums",
 						"id",
-						"3"
+						"120"
 					]
 				}
 			},
 			"response": []
 		},
-		{
-			"name": "http://127.0.0.1:9000/albums/",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": " {\n    \"userId\": 12,\n    \"id\": 110,\n    \"title\": \"editado\"\n}"
-				},
-				"url": {
-					"raw": "http://127.0.0.1:9000/albums/id/3",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "9000",
-					"path": [
-						"albums",
-						"id",
-						"3"
-					]
-				}
-			},
-			"response": []
-		}, 
 		{
 			"name": "delete_by_user_od",
 			"request": {
@@ -165,7 +130,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:3000/albums/1",
+					"raw": "http://127.0.0.1:9000/albums/1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -173,7 +138,7 @@
 						"0",
 						"1"
 					],
-					"port": "3000",
+					"port": "9000",
 					"path": [
 						"albums",
 						"1"
@@ -194,7 +159,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:3000/albums/id/",
+					"raw": "http://127.0.0.1:9000/albums/id/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -202,11 +167,79 @@
 						"0",
 						"1"
 					],
-					"port": "3000",
+					"port": "9000",
 					"path": [
 						"albums",
 						"id",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"userId\": 1,\r\n    \"id\": 120,\r\n    \"title\": \"sunteditado culpa\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9000/albums/id/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"albums",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"userId\": 15,\r\n    \"title\": \"epa\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9000/albums/id/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"albums",
+						"id",
+						"3"
 					]
 				}
 			},

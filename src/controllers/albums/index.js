@@ -57,13 +57,14 @@ const editCompleteAlbums=(req,res)=>{
 }
 const editPartitalAlbums=(req,res)=>{
   try {
+    console.log("test 1")
     const Id=req.params.id;
-    const newAlbum = req.body;
-    albumsService.editAllByUserId(Id,newAlbum);
+    const newData = req.body;
+    albumsService.editPartialByUserID(Id,newData);
     res.status(200).json({message:'Album editado'});
   } catch (error) {
-    
+    res.status(404).json({message:'No se usuario'});
   }
 }
 
-module.exports={getAlbums, getByUserId, getById, createAlbums, deleteAlbums, editCompleteAlbums, editCompleteAlbums}
+module.exports={getAlbums, getByUserId, getById, createAlbums, deleteAlbums, editCompleteAlbums, editPartitalAlbums}
