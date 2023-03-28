@@ -5,7 +5,7 @@ class AlbumsServices{
         this.Albums=bd.albums;
     }
     createAlbums(newAlbum){
-        this.Albums.push(newAlbum)
+        this.Albums.push(newAlbum);
     }
     queryAll(){
         return new Promise((resolve, reject) => {
@@ -17,7 +17,7 @@ class AlbumsServices{
     queryByUserId(UserId){
         return new Promise((resolve,reject)=>{
             const foundUserId=Object.values(bd.albums).filter(user=>user.userId==UserId);
-            resolve(foundUserId)
+            resolve(foundUserId);
         },1000);
     }
     queryById(Id){
@@ -29,11 +29,23 @@ class AlbumsServices{
     deleteByUserId(UserId) {
         const foundUserId = Object.values(bd.albums).filter(user => user.userId == UserId);
         if (foundUserId.length==0) {
-            res.status(404)
+            res.status(404);
         } else {
-            const newAlbum = Object.values(this.Albums).filter(user => user.userId != UserId)
-            this.Albums = newAlbum
+            const newAlbum = Object.values(this.Albums).filter(user => user.userId != UserId);
+            this.Albums = newAlbum;
         }        
+    }
+    editPartialByUserID(Id) {
+        const Id = req.params.id;
+        const newAlbum = req.body;
+        const foundId = Object.values(bd.albums).filter(user => user.id == Id);
+        if (foundId.length == 0) {
+            res.status(404);
+        } else {
+            const index = Object.values(bd.albums).findIndex(user => user.id === parseInt(Id));
+            bd.albums[index] = newAlbum;
+            console.log(bd.albums);
+        }
     }
 
 }
