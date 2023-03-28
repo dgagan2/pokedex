@@ -23,7 +23,11 @@ class AlbumsServices{
     queryById(Id){
         return new Promise((resolve,reject)=>{
             const foundId=Object.values(bd.albums).filter(user=>user.id==Id);
+        if(foundId.length>0){
             resolve(foundId);
+        }else{
+            reject(res.status(204))
+        }
         },1000)
     }
     deleteByUserId(UserId) {
@@ -35,16 +39,16 @@ class AlbumsServices{
             this.Albums = newAlbum;
         }        
     }
-    editPartialByUserID(Id) {
-        const Id = req.params.id;
-        const newAlbum = req.body;
+    editPartialByUserID() {
+       
+    }
+    editAllByUserId(Id,newAlbum){
         const foundId = Object.values(bd.albums).filter(user => user.id == Id);
         if (foundId.length == 0) {
             res.status(404);
         } else {
             const index = Object.values(bd.albums).findIndex(user => user.id === parseInt(Id));
             bd.albums[index] = newAlbum;
-            console.log(bd.albums);
         }
     }
 

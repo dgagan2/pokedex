@@ -15,7 +15,7 @@ const getByUserId=async (req,res)=>{
     const foundUserId=await albumsService.queryByUserId(UserId);
     res.status(200).json(foundUserId);
   } catch (error) {
-    res.status(404).json({message:'No se encontro el usuario'});
+    res.status(204).json({message:'No se encontro el usuario'});
   }
 }
 const getById=async (req,res)=>{
@@ -24,7 +24,7 @@ const getById=async (req,res)=>{
     const foundId=await albumsService.queryById(Id);
     res.status(200).json(foundId);
   } catch (error) {
-    res.status(404).json({message:'No se encontro el album'});
+    res.status(204).json({message:'No se encontro el album'});
   }
 }
 const createAlbums=(req,res)=>{
@@ -48,15 +48,19 @@ const deleteAlbums=(req,res)=>{
 const editCompleteAlbums=(req,res)=>{
   try {
     const Id=req.params.id;
-    albumsService.editPartialByUserID(Id);
-    res.status(200).json({message:'Usuario eliminado'});
+    const newAlbum = req.body;
+    albumsService.editAllByUserId(Id,newAlbum);
+    res.status(200).json({message:'Album editado'});
   } catch (error) {
-    res.status(404).json({message:'No se puede modificar el usuario'});
+    res.status(404).json({message:'No se puede editar el usuario'});
   }
 }
 const editPartitalAlbums=(req,res)=>{
   try {
-    
+    const Id=req.params.id;
+    const newAlbum = req.body;
+    albumsService.editAllByUserId(Id,newAlbum);
+    res.status(200).json({message:'Album editado'});
   } catch (error) {
     
   }

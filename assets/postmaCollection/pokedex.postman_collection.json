@@ -118,6 +118,40 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:9000/albums/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"userId\": 12,\n    \"id\": 110,\n    \"title\": \"editado\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9000/albums/id/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"albums",
+						"id",
+						"3"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
