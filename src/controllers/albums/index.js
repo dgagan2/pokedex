@@ -57,7 +57,6 @@ const editCompleteAlbums=(req,res)=>{
 }
 const editPartitalAlbums=(req,res)=>{
   try {
-    console.log("test 1")
     const Id=req.params.id;
     const newData = req.body;
     albumsService.editPartialByUserID(Id,newData);

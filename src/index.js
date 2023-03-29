@@ -11,6 +11,6 @@ app.listen(port,()=>{
 });
 
 app.get('/',(req, res)=>{
-    res.send('hello word');
+    res.send('Pagina inicial de pokedex');
 })
 routerApi(app);

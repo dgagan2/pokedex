@@ -50,7 +50,6 @@ class AlbumsServices{
             res.status(404);
         } else {
             const newArray = bd.albums.map(user => user.id === parseInt(Id) ? {...user,...newData}:user)
-            console.log(newArray)
         }
     }
     editAllByUserId(Id,newAlbum){
