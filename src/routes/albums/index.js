@@ -3,10 +3,11 @@ const {getAlbums, getByUserId, getById, createAlbums, deleteAlbums, editComplete
 const albumsRouter=express.Router();
 
 albumsRouter.get('/', getAlbums);
-albumsRouter.get('/:userId/', getByUserId)
-albumsRouter.get('/id/:id', getById)
-albumsRouter.post('/', createAlbums)
-albumsRouter.delete('/:userId/', deleteAlbums)
-albumsRouter.patch('/id/:id', editCompleteAlbums)
-albumsRouter.put('/id/:id',editPartitalAlbums)
+albumsRouter.get('/:userId/', getByUserId);
+albumsRouter.get('/id/:id', getById);
+albumsRouter.post('/', createAlbums);
+albumsRouter.delete('/:userId/', deleteAlbums);
+albumsRouter.patch('/id/:id', editCompleteAlbums);
+albumsRouter.put('/id/:id',editPartitalAlbums);
+
 module.exports=albumsRouter;
