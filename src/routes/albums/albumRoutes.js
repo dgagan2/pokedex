@@ -1,5 +1,5 @@
 const express=require('express');
-const {getAlbums, getByUserId, getById, createAlbums, deleteAlbums, editCompleteAlbums, editPartitalAlbums}=require('../../controllers/albums/index');
+const {getAlbums, getByUserId, getById, createAlbums, deleteAlbums, editCompleteAlbums, editPartitalAlbums}=require('../../controllers/albums/albumsController');
 const albumsRouter=express.Router();
 
 albumsRouter.get('/', getAlbums);

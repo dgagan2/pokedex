@@ -1,5 +1,6 @@
-const AlbumsService=require('../../services/albums/index');
+const AlbumsService=require('../../services/albums/albumService');
 const albumsService=new AlbumsService();
+
 
 const getAlbums = async (req, res) => {
     try {
@@ -15,25 +16,27 @@ const getByUserId=async (req,res)=>{
     const foundUserId=await albumsService.queryByUserId(UserId);
     res.status(200).json(foundUserId);
   } catch (error) {
-    res.status(204).json({message:'No se encontro el usuario'});
+    res.status(204).json({message:"No se encontro"})
+
   }
 }
-const getById=async (req,res)=>{
+const getById=async (req,res,next)=>{
   try {
     const Id=req.params.id;
     const foundId=await albumsService.queryById(Id);
     res.status(200).json(foundId);
   } catch (error) {
-    res.status(204).json({message:'No se encontro el album'});
+    res.status(404)
+    
   }
 }
 const createAlbums=(req,res)=>{
     try {
       const newAlbums=req.body;
       albumsService.createAlbums(newAlbums);
-      res.status(201).send();
+      res.status(201).send("ALbum creado");
     } catch (error) {
-      res.status(500).json( { message: 'error fatal' } );
+      res.status(500).json( { message: 'error fatal'} );
     }
 }
 const deleteAlbums=(req,res)=>{
@@ -62,7 +65,7 @@ const editPartitalAlbums=(req,res)=>{
     albumsService.editPartialByUserID(Id,newData);
     res.status(200).json({message:'Album editado'});
   } catch (error) {
-    res.status(404).json({message:'No se usuario'});
+    res.status(404).json({message:'Id no encontro'});
   }
 }
 
