@@ -1,13 +1,15 @@
 const AlbumsService=require('../../services/albums/albumService');
 const albumsService=new AlbumsService();
-
+const express=require('express')
+const app=express()
+app.use(express.json())
 
 const getAlbums = async (req, res) => {
     try {
       const albums = await albumsService.queryAll();
       res.status(200).json(albums);
     } catch(error) {
-      res.status(404).json( { message: 'no hay albunes' } );
+      res.status(404).send("No hay albumes");
     }
 };
 const getByUserId=async (req,res)=>{

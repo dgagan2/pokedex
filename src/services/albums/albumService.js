@@ -24,7 +24,7 @@ class AlbumsServices{
             if(foundUserId.length>0){
                 resolve(foundUserId);
             }else{
-                //reject(res.status(404))
+                reject()
             }
             
         },1000);
