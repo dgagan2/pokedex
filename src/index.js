@@ -7,10 +7,10 @@ const port=process.env.PORT || 3000;
 
 
 app.listen(port,()=>{
-    console.log(`Pokedex app listening in port ${port}`);
+    console.log(`Musicapp listening in port ${port}`);
 });
 
 app.get('/',(req, res)=>{
-    res.send('Pagina inicial de pokedex');
+    res.send('Pagina inicial de tu musica favorita');
 })
 routerApi(app);
