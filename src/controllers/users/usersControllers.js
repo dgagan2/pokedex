@@ -26,11 +26,30 @@ const editUser=(req,res)=>{
     try {
         const id=req.params.id;
         const bodyUser=req.body;
-        const users=userService.editUser(id,bodyUser);
+        userService.editUser(id,bodyUser);
         res.status(202).send("Usuario actualizado")
     } catch (error) {
         res.status(404).send("No ingreso datos para actualizar")
     }
 }
+const editpartial = (req, res) => {
+    try {
+        const id=req.params.id;
+        const bodyUser = req.body;
+        userService.editpartial(id,bodyUser);
+        res.status(202).send("Datos actualizados")
+    } catch (error) {
+        res.status(404).send("No ingreso datos para actualizar")
+    }
+}
+const deleteUser = (req, res) => {
+    try {
+        const id = req.params.id;
+        userService.deleteUser(id);
+        res.status(202).send("Usuario eliminado")
+    } catch (error) {
+        res.status(404).send("Id no encontrado")
+    }
+}
 
-module.exports={getUser,createUser,editUser}
+module.exports={getUser,createUser,editUser,editpartial,deleteUser}
